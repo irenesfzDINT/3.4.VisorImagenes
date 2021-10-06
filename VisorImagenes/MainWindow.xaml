@@ -8,7 +8,9 @@
         Icon="assets/image.ico"
         Title="Visor de imágenes"
         Height="450"
-        Width="800">
+        Width="700"
+        MinHeight="550"
+        MinWidth="700">
     <Grid>
         <DockPanel>
             <DockPanel DockPanel.Dock="Bottom"
@@ -16,17 +18,19 @@
                        Background="LightBlue"
                        Margin="5">
                 <TextBlock FontFamily="Rubik"
-                           FontSize="20">Nº imágenes: 10</TextBlock>
+                           FontSize="20"
+                           Margin="10">Nº imágenes: 10</TextBlock>
                 <TextBlock FontFamily="Rubik"
                            FontSize="20"
-                           HorizontalAlignment="Right">Diseñado por Irene Sánchez</TextBlock>
+                           HorizontalAlignment="Right"
+                           Margin="10">Diseñado por Irene Sánchez</TextBlock>
             </DockPanel>
             <Border BorderBrush="Black"
                     CornerRadius="3"
                     BorderThickness="3"
                     DockPanel.Dock="Right"
                     Margin="4"
-                    Background="LightGreen">
+                    Background="LightGreen" Width="115">
                 <DockPanel LastChildFill="False"
                            Margin="4">
                     <Button DockPanel.Dock="Top"
@@ -42,9 +46,28 @@
                 </DockPanel>
             </Border>
             <StackPanel DockPanel.Dock="Top">
-                <TextBlock>Visor de imágenes</TextBlock>
+                <TextBlock FontFamily="Rubik"
+                           FontSize="40"
+                           HorizontalAlignment="Center">Visor de imágenes</TextBlock>
             </StackPanel>
-
+            <WrapPanel>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"
+                       Height="200"></Image>
+            </WrapPanel>
 
         </DockPanel>
     </Grid>
