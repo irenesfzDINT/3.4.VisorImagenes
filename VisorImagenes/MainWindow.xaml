@@ -6,8 +6,46 @@
         xmlns:local="clr-namespace:VisorImagenes"
         mc:Ignorable="d"
         Icon="assets/image.ico"
-        Title="Visor de imágenes" Height="450" Width="800">
+        Title="Visor de imágenes"
+        Height="450"
+        Width="800">
     <Grid>
-        
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Bottom"
+                       Height="50"
+                       Background="LightBlue"
+                       Margin="5">
+                <TextBlock FontFamily="Rubik"
+                           FontSize="20">Nº imágenes: 10</TextBlock>
+                <TextBlock FontFamily="Rubik"
+                           FontSize="20"
+                           HorizontalAlignment="Right">Diseñado por Irene Sánchez</TextBlock>
+            </DockPanel>
+            <Border BorderBrush="Black"
+                    CornerRadius="3"
+                    BorderThickness="3"
+                    DockPanel.Dock="Right"
+                    Margin="4"
+                    Background="LightGreen">
+                <DockPanel LastChildFill="False"
+                           Margin="4">
+                    <Button DockPanel.Dock="Top"
+                            Margin="4">Añadir imagen</Button>
+                    <Button DockPanel.Dock="Top"
+                            Margin="4">Eliminar imagen</Button>
+                    <Button DockPanel.Dock="Top"
+                            Margin="4">Eliminar todas</Button>
+                    <Button DockPanel.Dock="Bottom"
+                            Margin="4">Recortar</Button>
+                    <Button DockPanel.Dock="Bottom"
+                            Margin="4">Rotar</Button>
+                </DockPanel>
+            </Border>
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock>Visor de imágenes</TextBlock>
+            </StackPanel>
+
+
+        </DockPanel>
     </Grid>
 </Window>
