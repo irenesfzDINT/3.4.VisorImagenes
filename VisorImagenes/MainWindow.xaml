@@ -7,69 +7,116 @@
         mc:Ignorable="d"
         Icon="assets/image.ico"
         Title="Visor de imágenes"
-        Height="450"
+        Height="569"
         Width="700"
-        MinHeight="550"
+        MinHeight="569"
         MinWidth="700">
+    <Window.Resources>
+        <!--Imagen-->
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Height"
+                    Value="200"></Setter>
+        </Style>
+        <!--Botones-->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin"
+                    Value="4">
+            </Setter>
+            <Setter Property="DockPanel.Dock"
+                    Value="Top"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}"
+               BasedOn="{StaticResource {x:Type Button}}"
+               x:Key="DockTop"></Style>
+        <Style TargetType="{x:Type Button}"
+               BasedOn="{StaticResource {x:Type Button}}"
+               x:Key="DockBottom">
+            <Setter Property="DockPanel.Dock"
+                    Value="Bottom"></Setter>
+        </Style>
+        <!--TextBlock-->
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily"
+                    Value="Rubik"></Setter>
+            <Setter Property="Margin"
+                    Value="10"></Setter>
+        </Style>
+        <Style x:Key="TextBottom"
+               TargetType="{x:Type TextBlock}"
+               BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="FontSize"
+                    Value="20"></Setter>
+        </Style>
+        <Style x:Key="TextTop"
+               TargetType="{x:Type TextBlock}"
+               BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="FontSize"
+                    Value="40"></Setter>
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"></Setter>
+        </Style>
+        <!--Border-->
+        <Style x:Key="Border"
+               TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush"
+                    Value="Black"></Setter>
+            <Setter Property="CornerRadius"
+                    Value="3"></Setter>
+            <Setter Property="BorderThickness"
+                    Value="3"></Setter>
+            <Setter Property="Margin"
+                    Value="4"></Setter>
+            <Setter Property="DockPanel.Dock"
+                    Value="Right"></Setter>
+            <Setter Property="Width"
+                    Value="115"></Setter>
+            <Setter Property="Background"
+                    Value="LightGreen"></Setter>
+        </Style>
+        <!--DockPanel-->
+        <Style TargetType="{x:Type DockPanel}"
+               x:Key="DockFooter">
+            <Setter Property="Height"
+                    Value="50"></Setter>
+            <Setter Property="Margin"
+                    Value="5"></Setter>
+            <Setter Property="LastChildFill"
+                    Value="False"></Setter>
+            <Setter Property="Background"
+                    Value="LightBlue"></Setter>
+            <Setter Property="DockPanel.Dock"
+                    Value="Bottom"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <DockPanel>
-            <DockPanel DockPanel.Dock="Bottom"
-                       Height="50"
-                       Background="LightBlue"
-                       Margin="5"
-                       LastChildFill="False">
+            <DockPanel Style="{StaticResource DockFooter}">
                 <TextBlock DockPanel.Dock="Left"
-                           FontFamily="Rubik"
-                           FontSize="20"
-                           Margin="10">Nº imágenes: 10</TextBlock>
-                <TextBlock FontFamily="Rubik"
-                           FontSize="20"
-                           DockPanel.Dock="Right"
-                           Margin="10">Diseñado por Irene Sánchez</TextBlock>
+                           Style="{StaticResource TextBottom}">Nº imágenes: 10</TextBlock>
+                <TextBlock DockPanel.Dock="Right"
+                           Style="{StaticResource TextBottom}">Diseñado por Irene Sánchez</TextBlock>
             </DockPanel>
-            <Border BorderBrush="Black"
-                    CornerRadius="3"
-                    BorderThickness="3"
-                    DockPanel.Dock="Right"
-                    Margin="4"
-                    Background="LightGreen"
-                    Width="115">
-                <DockPanel LastChildFill="False"
-                           Margin="4">
-                    <Button DockPanel.Dock="Top"
-                            Margin="4">Añadir imagen</Button>
-                    <Button DockPanel.Dock="Top"
-                            Margin="4">Eliminar imagen</Button>
-                    <Button DockPanel.Dock="Top"
-                            Margin="4">Eliminar todas</Button>
-                    <Button DockPanel.Dock="Bottom"
-                            Margin="4">Recortar</Button>
-                    <Button DockPanel.Dock="Bottom"
-                            Margin="4">Rotar</Button>
+            <Border Style="{StaticResource Border}">
+                <DockPanel LastChildFill="False">
+                    <Button Style="{StaticResource DockTop}">Añadir imagen</Button>
+                    <Button Style="{StaticResource DockTop}">Eliminar imagen</Button>
+                    <Button Style="{StaticResource DockTop}">Eliminar todas</Button>
+                    <Button Style="{StaticResource DockBottom}">Recortar</Button>
+                    <Button Style="{StaticResource DockBottom}">Rotar</Button>
                 </DockPanel>
             </Border>
             <StackPanel DockPanel.Dock="Top">
-                <TextBlock FontFamily="Rubik"
-                           FontSize="40"
-                           HorizontalAlignment="Center">Visor de imágenes</TextBlock>
+                <TextBlock Style="{StaticResource TextTop}">Visor de imágenes</TextBlock>
             </StackPanel>
             <WrapPanel>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
-                <Image Source="/assets/episodioIV.jpg"
-                       Height="200"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
+                <Image Source="/assets/episodioIV.jpg"></Image>
             </WrapPanel>
 
         </DockPanel>
